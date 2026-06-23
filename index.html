@@ -5,56 +5,43 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Scratch Reveal</title>
 
-<!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
 
 <style>
 body {
     margin: 0;
-    font-family: Georgia, serif;
-    background: #ffffff;
+    min-height: 100vh;
     text-align: center;
     color: #2c2c2c;
-    margin: 0;
-    font-family: Georgia, serif;
-    text-align: center;
-    color: #2c2c2c;
+    
 
-    /* Full screen background */
-    background-image: url("background.png");
+    background-image:
+        linear-gradient(
+            rgba(255,250,243,0.8),
+            rgba(255,250,243,0.8)
+        ),
+        url("background.png");
+
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
-    /* Center content */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-
-/* Soft overlay */
-body::after {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 250, 243, 0.6);
-    z-index: -1;
-    
-}
-
-/* Main title */
 h1 {
     margin-top: 25px;
     font-size: 32px;
     font-family: 'Dancing Script', cursive;
     color: #b89b3c;
     text-shadow: 2px 2px 6px rgba(255,255,255,0.9);
+    display: inline-block;
+    padding: 8px 18px;
+    border-radius: 14px;
+    background: rgba(255,255,255,0.65);
+    
 }
-
 /* Container controls size */
 .container {
     position: relative;
@@ -102,14 +89,13 @@ canvas {
 }
 </style>
 </head>
-
 <body>
-
 <h1>Scratch to Reveal!</h1>
 
 <div class="subtitle">
     <span>Did you find the groom?</span>
 </div>
+
 
 <div class="container">
     <img id="result" src="frank.jpg" />
@@ -118,6 +104,7 @@ canvas {
 <div class="subtitle">
     <span>Proudly coded and made by Danielle</span>
 </div>
+
 
 <script>
 const canvas = document.getElementById("scratch");
@@ -128,6 +115,7 @@ function resizeCanvas() {
     canvas.width = container.offsetWidth;
     canvas.height = container.offsetHeight;
 
+    // Scratch layer
     ctx.fillStyle = "#b89b3c";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
