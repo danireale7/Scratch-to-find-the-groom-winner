@@ -46,51 +46,57 @@ body::after {
 
 /* Main title */
 h1 {
-    font-size: 28px;
-    font-family: 'Dancing Script', cursive;
+    margin-top: 25px;
+    font-size: 32px;
+    font-family: 'Great Vibes', cursive;
     color: #b89b3c;
-    margin: 0 0 10px 0;
+    text-shadow: 2px 2px 6px rgba(255,255,255,0.9);
 }
 
-/* Subtitle */
+/* Container controls size */
+.container {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    margin: 30px auto 10px;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    border: 1.5px solid #e6c76e;
+}
+
+/* Image fits perfectly */
+.container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* THIS fixes “too big” / weird scaling */
+    display: block;
+}
+
+/* Canvas overlays image */
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Bottom text */
 .subtitle {
     font-size: 18px;
-    margin-bottom: 20px;
+    margin-top: 15px;
+    background: rgba(255,255,255,0.65);
+    display: inline-block;
+    padding: 8px 18px;
+    border-radius: 14px;
 }
 
 .subtitle span {
     display: block;
     font-family: 'Dancing Script', cursive;
-    font-size: 26px;
+    font-size: 28px;
     color: #b89b3c;
-}
-
-/* Scratch container */
-.container {
-    position: relative;
-    width: min(320px, 85vw);
-    height: min(320px, 85vw);
-
-    border-radius: 18px;
-    overflow: hidden;
-
-    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-    border: 1.5px solid #e6c76e;
-}
-
-/* Image */
-.container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-/* Canvas overlay */
-canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
+    margin-bottom: 5px;
+    text-shadow: 2px 2px 6px rgba(255,255,255,0.9);
 }
 </style>
 </head>
